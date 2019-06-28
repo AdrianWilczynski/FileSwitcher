@@ -1,4 +1,4 @@
-# Simple Switcher
+# File Switcher
 
 Cycle trough related files (sharing the same basename but with different extensions) using keybindings or navigate with handy quick pick menu. No configuration required.
 
