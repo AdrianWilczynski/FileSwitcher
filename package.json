@@ -3,6 +3,7 @@
 	"displayName": "Simple Switcher",
 	"description": "Cycle trough related files (sharing the same basename but with different extensions) using keybindings or navigate with handy quick pick menu.",
 	"publisher": "adrianwilczynski",
+	"icon": "img/icon.png",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/AdrianWilczynski/SimpleSwitcher.git"
