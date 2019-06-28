@@ -1,0 +1,86 @@
+{
+	"name": "simple-switcher",
+	"displayName": "Simple Switcher",
+	"description": "Cycle trough related files (sharing the same basename but with different extensions) using keybindings or navigate with handy quick pick menu.",
+	"publisher": "adrianwilczynski",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/AdrianWilczynski/SimpleSwitcher.git"
+	},
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.35.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"Switcher",
+		"Switch",
+		"File",
+		"Files",
+		"GoTo",
+		"Jump",
+		"Navigate",
+		"Navigation"
+	],
+	"activationEvents": [
+		"onCommand:extension.goToNextRelatedFile",
+		"onCommand:extension.goToPreviousRelatedFile",
+		"onCommand:extension.goToPickedRelatedFile"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.goToNextRelatedFile",
+				"title": "Go To Next Related File"
+			},
+			{
+				"command": "extension.goToPreviousRelatedFile",
+				"title": "Go To Previous Related File"
+			},
+			{
+				"command": "extension.goToPickedRelatedFile",
+				"title": "Go To Related File..."
+			}
+		],
+		"keybindings": [
+			{
+				"command": "extension.goToNextRelatedFile",
+				"key": "Alt+]"
+			},
+			{
+				"command": "extension.goToPreviousRelatedFile",
+				"key": "Alt+["
+			},
+			{
+				"command": "extension.goToPickedRelatedFile",
+				"key": "Alt+\\"
+			}
+		],
+		"menus": {
+			"explorer/context": [
+				{
+					"command": "extension.goToPickedRelatedFile",
+					"when": "!explorerResourceIsRoot && !explorerResourceIsFolder",
+					"group": "navigation"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "npm run compile && node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"typescript": "^3.3.1",
+		"vscode": "^1.1.28",
+		"tslint": "^5.12.1",
+		"@types/node": "^10.12.21",
+		"@types/mocha": "^2.2.42"
+	}
+}
